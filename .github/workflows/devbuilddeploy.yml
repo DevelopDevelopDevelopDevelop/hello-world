@@ -21,13 +21,13 @@ jobs:
       - name: 'Build and push image'
         uses: azure/docker-login@v1
         with:
-          login-server: ${{ ACR_NAME }}.azurecr.io
+          login-server: ${{ env.ACR_NAME }}.azurecr.io
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - run: |
           cd HelloWorld
-          docker build -f DOCKERFILE -t ${{ ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }} .
-          docker push ${{ ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }} 
+          docker build -f DOCKERFILE -t ${{ env.ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }} .
+          docker push ${{ env.ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }} 
           
   deploy:
     permissions:
@@ -44,7 +44,7 @@ jobs:
       - name: Build and deploy Container App
         uses: azure/container-apps-deploy-action@v1
         with:
-          acrName: ${{ ACR_NAME }}
-          containerAppName: ${{ CONTAINER_APP_NAME }}
-          resourceGroup: ${{ RESOURCE_GROUP_NAME }}
-          imageToDeploy: ${{ ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }}
+          acrName: ${{ env.ACR_NAME }}
+          containerAppName: ${{ env.CONTAINER_APP_NAME }}
+          resourceGroup: ${{ env.RESOURCE_GROUP_NAME }}
+          imageToDeploy: ${{ env.ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }}
