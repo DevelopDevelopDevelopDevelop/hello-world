@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: internal-app
+  name: helloworld-app
   labels:
-    app: internal-app
+    app: helloworld-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: internal-app
+      app: helloworld-app
   template:
     metadata:
       labels:
-        app: internal-app
+        app: helloworld-app
     spec:
       containers:
         - name: api
-          image: tsacrcmpdev.azurecr.io/api:latest
+          image: acrpocsfera.azurecr.io/helloapi:latest
           ports:
             - name: http
               containerPort: 8080
@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: internal-app
+  name: helloworld-app
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
@@ -34,4 +34,4 @@ spec:
   ports:
   - port: 80
   selector:
-    app: internal-app
+    app: helloworld-app
