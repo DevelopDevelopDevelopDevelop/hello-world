@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: acrpocsfera.azurecr.io/helloapi:latest
+          image: acrpocsfera.azurecr.io/helloworld:latest
           ports:
             - name: http
               containerPort: 8080
