@@ -27,6 +27,7 @@ jobs:
       - run: |
           cd HelloWorld
           docker build -f DOCKERFILE -t ${{ env.ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }} .
+          docker build -f DOCKERFILE -t ${{ env.ACR_NAME }}.azurecr.io/helloworld:latest .
           docker push ${{ env.ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }}
           docker push ${{ env.ACR_NAME }}.azurecr.io/helloworld:latest
           
