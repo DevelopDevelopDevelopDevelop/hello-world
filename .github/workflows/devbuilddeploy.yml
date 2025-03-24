@@ -63,6 +63,6 @@ jobs:
     
       - name: Deploy on AKS
         run: |
-          az aks get-credentials -r rg-poc-sfera-prod -n aks-poc-sfera-prod
+          az aks get-credentials -g rg-poc-sfera-prod -n aks-poc-sfera-prod
           cd k8s
           kubectl apply -f deployment.yaml -n sfera
