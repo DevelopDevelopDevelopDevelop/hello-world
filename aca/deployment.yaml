@@ -6,7 +6,7 @@ identity:
     ? "6e2d4bb3-55e6-4558-a9d7-eef6db8d3342"
     : {}
 properties:
-  environmentId: subscriptions/efd8f007-0923-49a2-959c-fecfdc08c756/resourceGroups/rg-poc-sfera-dev/providers/Microsoft.App/managedEnvironments/cae-poc-sfera-dev
+  environmentId: /subscriptions/efd8f007-0923-49a2-959c-fecfdc08c756/resourceGroups/rg-poc-sfera-dev/providers/Microsoft.App/managedEnvironments/cae-poc-sfera-dev
   configuration:
     activeRevisionsMode: single
     runtime:
