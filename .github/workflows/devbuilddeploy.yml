@@ -58,6 +58,7 @@ jobs:
     needs: deploy-dev
 
     steps:
+      - uses: actions/checkout@v4
       - name: Log in to Azure
         uses: azure/login@v1
         with:
