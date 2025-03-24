@@ -1,0 +1,35 @@
+api-version: 2024-02-02-preview
+location: italynorth
+identity:
+  type: UserAssigned
+  userAssignedIdentities:
+    ? "6e2d4bb3-55e6-4558-a9d7-eef6db8d3342"
+    : {}
+properties:
+  environmentId: subscriptions/efd8f007-0923-49a2-959c-fecfdc08c756/resourceGroups/rg-poc-sfera-dev/providers/Microsoft.App/managedEnvironments/cae-poc-sfera-dev
+  configuration:
+    activeRevisionsMode: single
+    runtime:
+      dotnet:
+        autoConfigureDataProtection: true
+    ingress:
+      external: true
+      targetPort: 8080
+      transport: http
+      allowInsecure: true
+    registries:
+      - server: acrpocsfera.azurecr.io
+        identity: 6e2d4bb3-55e6-4558-a9d7-eef6db8d3342
+  template:
+    containers:
+      - image: acrpocsfera.azurecr.io/helloworld:latest
+        name: helloworld
+        env:
+          - name: AZURE_CLIENT_ID
+            value: 6e2d4bb3-55e6-4558-a9d7-eef6db8d3342
+          - name: ASPNETCORE_FORWARDEDHEADERS_ENABLED
+            value: "true"
+          - name: HTTP_PORTS
+            value: 8080
+    scale:
+      minReplicas: 1
