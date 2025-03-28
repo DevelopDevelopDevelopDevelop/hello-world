@@ -1,7 +1,7 @@
 name: Build and deploy to aca
 
 env:
-  CONTAINER_APP_NAME: helloworld    # set this to the name of your Azure Web App
+  CONTAINER_APP_NAME: helloworldyaml  # set this to the name of your Azure Web App
   RESOURCE_GROUP_NAME: rg-poc-sfera-dev
   ACR_NAME: acrpocsfera
 on:
