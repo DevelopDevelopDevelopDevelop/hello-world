@@ -3,7 +3,7 @@ location: italynorth
 identity:
    type: UserAssigned
    userAssignedIdentities:
-    ? /subscriptions/efd8f007-0923-49a2-959c-fecfdc08c756/resourcegroups/rg-poc-sfera-dev/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-aca-poc-sfera-dev
+    ? " /subscriptions/efd8f007-0923-49a2-959c-fecfdc08c756/resourcegroups/rg-poc-sfera-dev/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-aca-poc-sfera-dev"
     : {}
 properties:
   environmentId: /subscriptions/efd8f007-0923-49a2-959c-fecfdc08c756/resourceGroups/rg-poc-sfera-dev/providers/Microsoft.App/managedEnvironments/cae-poc-sfera-dev
