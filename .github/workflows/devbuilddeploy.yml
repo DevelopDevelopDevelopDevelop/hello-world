@@ -52,7 +52,7 @@ jobs:
           acrUsername: ${{ secrets.REGISTRY_USERNAME }}
           acrPassword: ${{ secrets.REGISTRY_PASSWORD }}
           containerAppName: ${{ env.CONTAINER_APP_NAME }}
-          yamlConfigPath: /aca/deployment.yaml
+          yamlConfigPath: aca/deployment.yaml
 
   deploy-prod:
     permissions:
