@@ -50,7 +50,6 @@ jobs:
           resourceGroup: ${{ env.RESOURCE_GROUP_NAME }}
           acrName: ${{ env.ACR_NAME }}
           containerAppName: ${{ env.CONTAINER_APP_NAME }}
-          imageToDeploy: ${{ env.ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }}
           yamlConfigPath: aca/deployment.yaml
 
   deploy-prod:
