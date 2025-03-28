@@ -1,10 +1,5 @@
 api-version: 2024-02-02-preview
 location: italynorth
-identity:
-  type: UserAssigned
-  userAssignedIdentities:
-    ? /subscriptions/dd33ebd8-451b-4921-9436-0dff5813bb42/resourcegroups/rg-poc-sfera-dev/providers/Microsoft.App/managedEnvironments/cae-poc-sfera-dev
-    : {}
 properties:
   environmentId: /subscriptions/efd8f007-0923-49a2-959c-fecfdc08c756/resourceGroups/rg-poc-sfera-dev/providers/Microsoft.App/managedEnvironments/cae-poc-sfera-dev
   configuration:
