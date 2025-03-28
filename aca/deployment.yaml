@@ -16,9 +16,9 @@ properties:
       targetPort: 8080
       transport: http
       allowInsecure: true
-  registries:
-    - server: acrpocsfera.azurecr.io
-      identity: /subscriptions/efd8f007-0923-49a2-959c-fecfdc08c756/resourcegroups/rg-poc-sfera-dev/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-aca-poc-sfera-dev
+    registries:
+      - server: acrpocsfera.azurecr.io
+        identity: /subscriptions/efd8f007-0923-49a2-959c-fecfdc08c756/resourcegroups/rg-poc-sfera-dev/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-aca-poc-sfera-dev
   template:
     containers:
       - image: acrpocsfera.azurecr.io/helloworld:latest
