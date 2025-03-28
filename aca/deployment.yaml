@@ -15,7 +15,7 @@ properties:
   template:
     containers:
       - image: acrpocsfera.azurecr.io/helloworld:latest
-        name: helloworld
+        name: helloworldyaml
         env:
           - name: ASPNETCORE_FORWARDEDHEADERS_ENABLED
             value: "true"

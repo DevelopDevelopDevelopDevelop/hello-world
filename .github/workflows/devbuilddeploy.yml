@@ -52,7 +52,7 @@ jobs:
           acrUsername: ${{ secrets.REGISTRY_USERNAME }}
           acrPassword: ${{ secrets.REGISTRY_PASSWORD }}
           containerAppName: ${{ env.CONTAINER_APP_NAME }}
-          imageToDeploy: ${{ env.ACR_NAME }}.azurecr.io/helloworld:${{ github.sha }}
+          yamlConfigPath: /aca/deployment.yaml
 
   deploy-prod:
     permissions:
