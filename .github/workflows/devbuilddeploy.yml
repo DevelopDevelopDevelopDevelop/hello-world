@@ -47,6 +47,7 @@ jobs:
       - name: Build and deploy Container App
         uses: azure/container-apps-deploy-action@v1
         with:
+          resourceGroup: ${{ env.RESOURCE_GROUP_NAME }}
           yamlConfigPath: aca/deployment.yaml
 
   deploy-prod:
